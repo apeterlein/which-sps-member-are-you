@@ -34,6 +34,8 @@ function main() {
 		var ans = $(".bg-selected > .card-body").map(function() {return this.id;});
 		
 		if (ans.length < 10) {
+			$(".bg-not-done").removeClass("bg-not-done").addClass("bg-secondary");
+			$(".bg-secondary:not(:has(.bg-selected))").removeClass("bg-secondary").addClass("bg-not-done");
 			$("#submit").text("Answer 'em all first");
 			return;
 		}
